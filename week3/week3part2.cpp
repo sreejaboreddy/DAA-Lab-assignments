@@ -1,0 +1,39 @@
+
+// This is selection sort
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n, j;
+        cout << "enter the limit of the array";
+        cin >> n;
+        int a[n];
+        cout << "enter the elements";
+        for (int i = 0; i < n; i++)
+            cin >> a[i];
+        for (int i = 0; i < n - 1; i++)
+        {
+            int min = i;
+            for (int j = i + 1; j < n; j++)
+            {
+                if (a[j] < a[min])
+                    min = j;
+            }
+            if (min != i)
+            {
+                int x = a[i];
+                a[i] = a[min];
+                a[min] = x;
+            }
+        }
+        for (int i = 0; i < n; i++)
+            cout << a[i] << " ";
+    }
+
+    return 0;
+}
